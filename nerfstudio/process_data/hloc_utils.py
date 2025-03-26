@@ -100,12 +100,12 @@ def run_hloc(
         sys.exit(1)
 
     outputs = colmap_dir
-    sfm_pairs = outputs / "pairs-netvlad.txt"
+    sfm_pairs = outputs / "pairs-megaloc.txt"
     sfm_dir = outputs / "sparse" / "0"
     features = outputs / "features.h5"
     matches = outputs / "matches.h5"
 
-    retrieval_conf = extract_features.confs["netvlad"]  # type: ignore
+    retrieval_conf = extract_features.confs["megaloc"]  # type: ignore
     feature_conf = extract_features.confs[feature_type]  # type: ignore
     matcher_conf = match_features.confs[matcher_type]  # type: ignore
 
