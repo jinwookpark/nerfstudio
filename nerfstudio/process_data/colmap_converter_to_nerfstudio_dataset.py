@@ -51,6 +51,8 @@ class ColmapConverterToNerfstudioDataset(BaseConverterToNerfstudioDataset):
         "superpoint_aachen",
         "superpoint_max",
         "superpoint_inloc",
+        "aliked-n16",
+        "xfeat",
         "r2d2",
         "d2net-ss",
         "sosnet",
@@ -68,6 +70,8 @@ class ColmapConverterToNerfstudioDataset(BaseConverterToNerfstudioDataset):
         "adalam",
         "disk+lightglue",
         "superpoint+lightglue",
+        "aliked+lightglue",
+        "xfeat+lighterglue",
     ] = "any"
     """Matching algorithm."""
     num_downscales: int = 3
