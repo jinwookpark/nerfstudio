@@ -52,15 +52,18 @@ class CameraModel(Enum):
     EQUIRECTANGULAR = "EQUIRECTANGULAR"
     PINHOLE = "PINHOLE"
     SIMPLE_PINHOLE = "SIMPLE_PINHOLE"
+    SIMPLE_RADIAL="SIMPLE_RADIAL"
 
 
 CAMERA_MODELS = {
-    "perspective": CameraModel.OPENCV,
+    #"perspective": CameraModel.OPENCV,
+    "perspective": CameraModel.SIMPLE_RADIAL,
     "fisheye": CameraModel.OPENCV_FISHEYE,
     "equirectangular": CameraModel.EQUIRECTANGULAR,
     "pinhole": CameraModel.PINHOLE,
     "simple_pinhole": CameraModel.SIMPLE_PINHOLE,
-}
+} 
+
 
 
 def list_images(data: Path, recursive: bool = True) -> List[Path]:
