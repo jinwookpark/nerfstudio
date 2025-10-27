@@ -150,6 +150,9 @@ class SplatfactoModelConfig(ModelConfig):
     """
     camera_optimizer: CameraOptimizerConfig = field(default_factory=lambda: CameraOptimizerConfig(mode="off"))
     """Config of the camera optimizer to use"""
+
+    with_ut: bool = False
+    with_eval3d: bool = False
     use_bilateral_grid: bool = False
     """If True, use bilateral grid to handle the ISP changes in the image space. This technique was introduced in the paper 'Bilateral Guided Radiance Field Processing' (https://bilarfpro.github.io/)."""
     grid_shape: Tuple[int, int, int] = (16, 16, 8)
@@ -570,6 +573,8 @@ class SplatfactoModel(Model):
             sparse_grad=False,
             absgrad=self.strategy.absgrad if isinstance(self.strategy, DefaultStrategy) else False,
             rasterize_mode=self.config.rasterize_mode,
+            with_ut=self.config.with_ut,
+            with_eval3d=self.config.with_eval3d,
             # set some threshold to disregrad small gaussians for faster rendering.
             # radius_clip=3.0,
         )
