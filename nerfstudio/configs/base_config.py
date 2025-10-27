@@ -136,7 +136,7 @@ class ViewerConfig(PrintableConfig):
     """The host address to bind the websocket server to."""
     num_rays_per_chunk: int = 32768
     """number of rays per chunk to render with viewer"""
-    max_num_display_images: int = 512
+    max_num_display_images: int = -1
     """Maximum number of training images to display in the viewer, to avoid lag. This does not change which images are
     actually used in training/evaluation. If -1, display all."""
     quit_on_train_completion: bool = False
